@@ -54,3 +54,9 @@ export default async function ProductList(){
         </>
     )
 }
+export function generateMetadata(){
+    return({
+      title:"product list page",
+      description:"this is the description of the data",
+    })
+  }
