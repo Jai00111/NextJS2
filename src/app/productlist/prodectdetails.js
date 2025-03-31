@@ -12,7 +12,7 @@ export default function ProductDetails({details}){
     return(
         <>
         <button onClick={handleClick}>{btnText}</button>
-        {showPrice && (<p>Price is ={details}</p>)}
+        {showPrice && (<p style={{color:"black"}}>Price is ={details}</p>)}
         </>
     )
 }

@@ -1,7 +1,7 @@
 // "use client"
 // import { useEffect, useState } from "react"
 
-import ProductDetails from "./prodectdetails";
+// import ProductDetails from "./prodectdetails";
 
 // export default function ProductList(){
 //     let [product , setProduct]=useState([])
@@ -25,14 +25,17 @@ import ProductDetails from "./prodectdetails";
 //     )
 // }
 
+import custum from "./custum.module.css"
+import ProductDetails from "./prodectdetails";
 async function productdetails(){
-    let data=await fetch("https://jsonexamples.com/products");
+    let data= await fetch("https://jsonexamples.com/products");
     data=await data.json();
     return data.products;
 }
 
 export default async function ProductList(){
     let prod= await productdetails();
+    
     return(
         <>
         <h1>
@@ -41,7 +44,10 @@ export default async function ProductList(){
         <div>
         {
             prod.map((item,id)=>{
-               return <h5 style={{marginBottom:"20px"}} key={id}>Title: {item.title}---<ProductDetails details={item.price}/></h5>
+               return <h5 className={custum.main} style={{marginBottom:"20px"}} key={id}>
+                Title: {item.title}---
+                <ProductDetails details={item.price}/>
+                </h5>
             })
         }
             </div>&nbsp;&nbsp;
